@@ -1,0 +1,16 @@
+SmalltalkCISpec {
+  #loading : [
+    SCIMetacelloLoadSpec {
+      #baseline : 'DataSet',
+      #platforms : [ #pharo ]
+    }
+  ],
+  #preTesting : SCICustomScript {
+    #path : 'resources/ci/addRepoToIceberg.st'
+  },
+  #testing : {
+    #coverage : {
+      #packages : [ 'DataSet*' ]
+    }
+  }
+}
