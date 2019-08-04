@@ -25,6 +25,8 @@ BaselineOfDataSet >> baseline: spec [
 			baseline: 'DataFrame'
     		with: [ spec repository: 'github://PolyMathOrg/DataFrame/src' ].
 		"Packages"
-		spec package: 'DataSet'.
+		spec 
+			package: 'DataSet';
+			package: 'DataSet-Tests' with: [ spec requires: #('DataSet') ].
 		].
 ]

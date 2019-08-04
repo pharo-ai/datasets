@@ -1,3 +1,9 @@
+"
+I point the location of cloned repository.
+
+Public API:
+	root := DataSetBridge root.
+"
 Class {
 	#name : #DataSetBridge,
 	#superclass : #GitBridge,
