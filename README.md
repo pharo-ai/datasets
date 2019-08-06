@@ -13,3 +13,21 @@ Metacello new
   repository: 'github://AtharvaKhare/DataSet';
   load.
 ```
+
+## Usage
+To see all the available datasets, use `DataSet availableDataSets`.
+
+To load a dataset, using `DataSet loadXYZ`. For example:
+```
+df := DataSet loadBoston.
+```
+
+Loading a new dataset involves downloading it's csv to local filesystem followed by reading it in DataFrame. You can preemptively download datasets by:
+```
+"Downloads a single dataset"
+DataSet downloadBoston.
+
+"Downloads all datasets"
+DataSet downloadAll.
+```
+This command skips downloading if dataset already exists. DataSets are stored in `data` folder of this repo in your filesystem.

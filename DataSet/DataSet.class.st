@@ -21,6 +21,110 @@ Class {
 	#category : #DataSet
 }
 
+{ #category : #utilities }
+DataSet class >> availableDataSets [
+	"Returns list of available datasets"
+	^ #(
+		'Boston house prices dataset'
+		'Breast cancer wisconsin (diagnostic) dataset'
+		'Diabetes dataset'
+		'Optical recognition of handwritten digits dataset'
+		'Iris plants dataset'
+		'MNIST testing data'
+		'Wine recognition dataset'
+	)
+]
+
+{ #category : #utilities }
+DataSet class >> downloadAll [
+	"Downloads all available datasets. Skips existing files."
+	
+	self downloadBoston.
+	self downloadBreastCancer.
+	self downloadDiabetes.
+	self downloadDigits.
+	self downloadIris.
+	self downloadMnistTest.
+	self downloadWine.
+]
+
+{ #category : #utilities }
+DataSet class >> downloadBoston [
+	"Downloads boston housing dataset. Skips if file exists."
+
+	(DataSetBridge root / 'data' / 'boston.csv') exists ifFalse: [
+		ZnClient new
+			url: 'https://raw.githubusercontent.com/AtharvaKhare/DataSetFiles/master/datasets/boston.csv';
+			downloadTo: DataSetBridge root / 'data'
+		].
+]
+
+{ #category : #utilities }
+DataSet class >> downloadBreastCancer [
+	"Downloads breast cancer dataset. Skips if file exists."
+
+	(DataSetBridge root / 'data' / 'breast_cancer.csv') exists ifFalse: [
+		ZnClient new
+			url: 'https://raw.githubusercontent.com/AtharvaKhare/DataSetFiles/master/datasets/breast_cancer.csv';
+			downloadTo: DataSetBridge root / 'data'
+		].
+]
+
+{ #category : #utilities }
+DataSet class >> downloadDiabetes [
+	"Downloads diabetes dataset. Skips if file exists."
+
+	(DataSetBridge root / 'data' / 'diabetes.csv') exists ifFalse: [
+		ZnClient new
+			url: 'https://raw.githubusercontent.com/AtharvaKhare/DataSetFiles/master/datasets/diabetes.csv';
+			downloadTo: DataSetBridge root / 'data'
+			].
+]
+
+{ #category : #utilities }
+DataSet class >> downloadDigits [
+	"Downloads digits dataset. Skips if file exists."
+
+	(DataSetBridge root / 'data' / 'digits.csv') exists ifFalse: [
+		ZnClient new
+			url: 'https://raw.githubusercontent.com/AtharvaKhare/DataSetFiles/master/datasets/digits.csv';
+			downloadTo: DataSetBridge root / 'data'
+			].
+]
+
+{ #category : #utilities }
+DataSet class >> downloadIris [
+	"Downloads iris dataset. Skips if file exists."
+
+	(DataSetBridge root / 'data' / 'iris.csv') exists ifFalse: [
+		ZnClient new
+			url: 'https://raw.githubusercontent.com/AtharvaKhare/DataSetFiles/master/datasets/iris.csv';
+			downloadTo: DataSetBridge root / 'data'
+			].
+]
+
+{ #category : #utilities }
+DataSet class >> downloadMnistTest [
+	"Downloads MNIST test dataset. Skips if file exists."
+
+	(DataSetBridge root / 'data' / 'mnist_test.csv') exists ifFalse: [
+		ZnClient new
+			url: 'https://raw.githubusercontent.com/AtharvaKhare/DataSetFiles/master/datasets/mnist_test.csv';
+			downloadTo: DataSetBridge root / 'data'
+		].
+]
+
+{ #category : #utilities }
+DataSet class >> downloadWine [
+	"Downloads wine dataset. Skips if file exists."
+
+	(DataSetBridge root / 'data' / 'wine.csv') exists ifFalse: [
+		ZnClient new
+			url: 'https://raw.githubusercontent.com/AtharvaKhare/DataSetFiles/master/datasets/wine.csv';
+			downloadTo: DataSetBridge root / 'data'
+		].
+]
+
 { #category : #loading }
 DataSet class >> loadBoston [
 	"Loads Boston house prices dataset. Sources:
@@ -47,8 +151,9 @@ DataSet class >> loadBoston [
 		13. LSTAT: % lower status of the population
 		14. MEDV: Median value of owner-occupied homes in $1000's
 	"
-
-	^ DataFrame readFromJson: DataSetBridge root / 'data' / 'boston.json'.
+	
+	self downloadBoston.
+	^ DataFrame readFromCsv: DataSetBridge root / 'data' / 'boston.csv'.
 ]
 
 { #category : #loading }
@@ -76,7 +181,8 @@ DataSet class >> loadBreastCancer [
 	Date:	November, 1995
 	"
 
-	^ DataFrame readFromJson: DataSetBridge root / 'data' / 'breast_cancer.json'.
+	self downloadBreastCancer.
+	^ DataFrame readFromCsv: DataSetBridge root / 'data' / 'breast_cancer.csv'.
 ]
 
 { #category : #loading }
@@ -98,7 +204,9 @@ DataSet class >> loadDiabetes [
     S6
 	 y
 	"
-	^ DataFrame readFromJson: DataSetBridge root / 'data' / 'diabetes.json'.
+	
+	self downloadDiabetes.
+	^ DataFrame readFromCsv: DataSetBridge root / 'data' / 'diabetes.csv'.
 ]
 
 { #category : #loading }
@@ -110,7 +218,9 @@ DataSet class >> loadDigits [
 	Attribute Information: 8x8 image of integer pixels in the range 0..16.
 	Creator: Alpaydin (alpaydin ‘@’ boun.edu.tr)
 	"
-	^ DataFrame readFromJson: DataSetBridge root / 'data' / 'digits.json'.
+	
+	self downloadDigits.
+	^ DataFrame readFromCsv: DataSetBridge root / 'data' / 'digits.csv'.
 ]
 
 { #category : #loading }
@@ -119,17 +229,21 @@ DataSet class >> loadIris [
 	Number of Instances: 150 (50 in each of three classes)
 	Number of Attributes: 4 numeric, predictive attributes and the class
 	"
-	^ DataFrame readFromJson: DataSetBridge root / 'data' / 'iris.json'.
+	
+	self downloadIris.
+	^ DataFrame readFromCsv: DataSetBridge root / 'data' / 'iris.csv'.
 ]
 
 { #category : #loading }
 DataSet class >> loadMnistTest [
-	"Loads MNIST training data. Can take longer to load.
+	"Loads MNIST testing data. Can take longer to load.
 	The MNIST database of handwritten digits, available from http://yann.lecun.com/exdb/mnist/.
 	The testing set has 10,000 examples. It is a subset of a larger set available from NIST.
 	The digits have been size-normalized and centered in a fixed-size image. 
 	"
-	^ DataFrame readFromJson: DataSetBridge root / 'data' / 'mnist_test.json'.
+	
+	self downloadMnistTest.
+	^ DataFrame readFromCsv: DataSetBridge root / 'data' / 'mnist_test.csv'.
 ]
 
 { #category : #loading }
@@ -153,5 +267,7 @@ DataSet class >> loadWine [
     Proline
     class
 	"
-	^ DataFrame readFromJson: DataSetBridge root / 'data' / 'wine.json'.
+	
+	self downloadWine.
+	^ DataFrame readFromCsv: DataSetBridge root / 'data' / 'wine.csv'.
 ]
