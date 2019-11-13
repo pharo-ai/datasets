@@ -9,7 +9,7 @@ To install `Datasets`, go to the Playground (`Ctrl+OW`) in your [Pharo](https://
 
 ```smalltalk
 Metacello new
-  baseline: 'DataSet';
+  baseline: 'Datasets';
   repository: 'github://PharoAI/Datasets';
   load.
 ```
