@@ -1,4 +1,4 @@
-# Pharo DataSet
+# Pharo Datasets
 [![Build Status](https://travis-ci.org/PharoAI/Datasets.svg?branch=master)](https://travis-ci.org/PharoAI/Datasets)
 
 Datasets library is used to load datasets in Pharo. The datasets are loaded as [DataFrame](https://github.com/PolyMathOrg/DataFrame/) objects.
