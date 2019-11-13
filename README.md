@@ -15,7 +15,6 @@ Metacello new
 ```
 
 ## Usage
-To see all the available datasets, use `DataSet availableDataSets`.
 
 To load a dataset, using `Datasets loadXYZ`. For example:
 ```
