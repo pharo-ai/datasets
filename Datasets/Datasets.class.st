@@ -21,20 +21,6 @@ Class {
 	#category : #Datasets
 }
 
-{ #category : #utilities }
-Datasets class >> availableDatasets [
-	"Returns list of available datasets"
-	^ #(
-		'Boston house prices dataset'
-		'Breast cancer wisconsin (diagnostic) dataset'
-		'Diabetes dataset'
-		'Optical recognition of handwritten digits dataset'
-		'Iris plants dataset'
-		'MNIST testing data'
-		'Wine recognition dataset'
-	)
-]
-
 { #category : #'as yet unclassified' }
 Datasets class >> dataDirectory [
 	"Directory in which all dataset files will be stored"
