@@ -1,5 +1,5 @@
 # Pharo DataSet
-[![Build Status](https://api.travis-ci.com/AtharvaKhare/DataSet.svg?branch=master)](https://travis-ci.com/AtharvaKhare/DataSet)
+[![Build Status](https://api.travis-ci.com/AtharvaKhare/DataSet.svg?branch=master)](https://travis-ci.com/PharoAI/DataSet)
 
 DataSet library is used to load toy datasets in Pharo. The datasets are loaded as [DataFrame](https://github.com/PolyMathOrg/DataFrame/) objects.
 
@@ -10,7 +10,7 @@ To install DataSet, go to the Playground (`Ctrl+OW`) in your fresh Pharo image a
 ```smalltalk
 Metacello new
   baseline: 'DataSet';
-  repository: 'github://AtharvaKhare/DataSet';
+  repository: 'github://PharoAI/DataSet';
   load.
 ```
 
