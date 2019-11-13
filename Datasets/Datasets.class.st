@@ -22,7 +22,7 @@ Class {
 }
 
 { #category : #utilities }
-Datasets class >> availableDataSets [
+Datasets class >> availableDatasets [
 	"Returns list of available datasets"
 	^ #(
 		'Boston house prices dataset'
@@ -39,19 +39,6 @@ Datasets class >> availableDataSets [
 Datasets class >> dataDirectory [
 	"Directory in which all dataset files will be stored"
 	^ 'data' asFileReference ensureCreateDirectory
-]
-
-{ #category : #utilities }
-Datasets class >> downloadAll [
-	"Downloads all available datasets. Skips existing files."
-	
-	self downloadBoston.
-	self downloadBreastCancer.
-	self downloadDiabetes.
-	self downloadDigits.
-	self downloadIris.
-	self downloadMnistTest.
-	self downloadWine.
 ]
 
 { #category : #utilities }
