@@ -1,7 +1,7 @@
 # Pharo DataSet
 [![Build Status](https://travis-ci.org/PharoAI/Datasets.svg?branch=master)](https://travis-ci.org/PharoAI/Datasets)
 
-DataSet library is used to load toy datasets in Pharo. The datasets are loaded as [DataFrame](https://github.com/PolyMathOrg/DataFrame/) objects.
+Datasets library is used to load datasets in Pharo. The datasets are loaded as [DataFrame](https://github.com/PolyMathOrg/DataFrame/) objects.
 
 
 ## Installation
