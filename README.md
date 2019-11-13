@@ -19,15 +19,13 @@ To see all the available datasets, use `DataSet availableDataSets`.
 
 To load a dataset, using `Datasets loadXYZ`. For example:
 ```
-df := Datasets loadBoston.
+Datasets loadBoston.
+Datasets loadBreastCancer.
+Datasets loadWine.
+Datasets loadDiabetes.
+Datasets loadDigits.
+Datasets loadMnistTest.
+Datasets loadIris.
 ```
 
-Loading a new dataset involves downloading it's csv to local filesystem followed by reading it in DataFrame. You can preemptively download datasets by:
-```
-"Downloads a single dataset"
-Datasets downloadBoston.
-
-"Downloads all datasets"
-Datasets downloadAll.
-```
-This command skips downloading if dataset already exists. Datasets are stored in `data` folder of this repo in your filesystem.
+Loading a new dataset involves downloading the CSV file into the data/ directory in the local folder of your image. Then the data is read from the file and returned to you as a DataFrame object.
