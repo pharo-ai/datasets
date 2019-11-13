@@ -8,25 +8,21 @@ Installs:
 
 "
 Class {
-	#name : #BaselineOfDataSet,
+	#name : #BaselineOfDatasets,
 	#superclass : #BaselineOf,
-	#category : #BaselineOfDataSet
+	#category : #BaselineOfDatasets
 }
 
 { #category : #baselines }
-BaselineOfDataSet >> baseline: spec [
+BaselineOfDatasets >> baseline: spec [
 	<baseline>
 	spec for: #common do: [ 
 		"External dependencies"
-		spec
-			baseline: 'GitBridge'
-    		with: [ spec repository: 'github://jecisc/GitBridge/src' ].
 		spec
 			baseline: 'DataFrame'
     		with: [ spec repository: 'github://PolyMathOrg/DataFrame/src' ].
 		"Packages"
 		spec 
-			package: 'DataSet';
-			package: 'DataSet-Tests' with: [ spec requires: #('DataSet') ].
-		].
+			package: 'Datasets';
+			package: 'Datasets-Tests' with: [ spec requires: #('Datasets') ] ].
 ]

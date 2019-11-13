@@ -16,13 +16,13 @@ Example:
 	df := DataSet loadBoston.
 "
 Class {
-	#name : #DataSet,
+	#name : #Datasets,
 	#superclass : #Object,
-	#category : #DataSet
+	#category : #Datasets
 }
 
 { #category : #utilities }
-DataSet class >> availableDataSets [
+Datasets class >> availableDataSets [
 	"Returns list of available datasets"
 	^ #(
 		'Boston house prices dataset'
@@ -35,8 +35,14 @@ DataSet class >> availableDataSets [
 	)
 ]
 
+{ #category : #'as yet unclassified' }
+Datasets class >> dataDirectory [
+	"Directory in which all dataset files will be stored"
+	^ 'data' asFileReference ensureCreateDirectory
+]
+
 { #category : #utilities }
-DataSet class >> downloadAll [
+Datasets class >> downloadAll [
 	"Downloads all available datasets. Skips existing files."
 	
 	self downloadBoston.
@@ -49,84 +55,19 @@ DataSet class >> downloadAll [
 ]
 
 { #category : #utilities }
-DataSet class >> downloadBoston [
-	"Downloads boston housing dataset. Skips if file exists."
-
-	(DataSetBridge root / 'data' / 'boston.csv') exists ifFalse: [
-		ZnClient new
-			url: 'https://raw.githubusercontent.com/AtharvaKhare/DataSetFiles/master/datasets/boston.csv';
-			downloadTo: DataSetBridge root / 'data'
-		].
-]
-
-{ #category : #utilities }
-DataSet class >> downloadBreastCancer [
-	"Downloads breast cancer dataset. Skips if file exists."
-
-	(DataSetBridge root / 'data' / 'breast_cancer.csv') exists ifFalse: [
-		ZnClient new
-			url: 'https://raw.githubusercontent.com/AtharvaKhare/DataSetFiles/master/datasets/breast_cancer.csv';
-			downloadTo: DataSetBridge root / 'data'
-		].
-]
-
-{ #category : #utilities }
-DataSet class >> downloadDiabetes [
-	"Downloads diabetes dataset. Skips if file exists."
-
-	(DataSetBridge root / 'data' / 'diabetes.csv') exists ifFalse: [
-		ZnClient new
-			url: 'https://raw.githubusercontent.com/AtharvaKhare/DataSetFiles/master/datasets/diabetes.csv';
-			downloadTo: DataSetBridge root / 'data'
-			].
-]
-
-{ #category : #utilities }
-DataSet class >> downloadDigits [
-	"Downloads digits dataset. Skips if file exists."
-
-	(DataSetBridge root / 'data' / 'digits.csv') exists ifFalse: [
-		ZnClient new
-			url: 'https://raw.githubusercontent.com/AtharvaKhare/DataSetFiles/master/datasets/digits.csv';
-			downloadTo: DataSetBridge root / 'data'
-			].
-]
-
-{ #category : #utilities }
-DataSet class >> downloadIris [
-	"Downloads iris dataset. Skips if file exists."
-
-	(DataSetBridge root / 'data' / 'iris.csv') exists ifFalse: [
-		ZnClient new
-			url: 'https://raw.githubusercontent.com/AtharvaKhare/DataSetFiles/master/datasets/iris.csv';
-			downloadTo: DataSetBridge root / 'data'
-			].
-]
-
-{ #category : #utilities }
-DataSet class >> downloadMnistTest [
-	"Downloads MNIST test dataset. Skips if file exists."
-
-	(DataSetBridge root / 'data' / 'mnist_test.csv') exists ifFalse: [
-		ZnClient new
-			url: 'https://raw.githubusercontent.com/AtharvaKhare/DataSetFiles/master/datasets/mnist_test.csv';
-			downloadTo: DataSetBridge root / 'data'
-		].
-]
-
-{ #category : #utilities }
-DataSet class >> downloadWine [
-	"Downloads wine dataset. Skips if file exists."
-
-	(DataSetBridge root / 'data' / 'wine.csv') exists ifFalse: [
-		ZnClient new
-			url: 'https://raw.githubusercontent.com/AtharvaKhare/DataSetFiles/master/datasets/wine.csv';
-			downloadTo: DataSetBridge root / 'data'
-		].
+Datasets class >> downloadDatasetNamed: aDatasetName [
+	"Downloads dataset with a given name"
+	
+	| fileName |
+	fileName := aDatasetName, '.csv'.
+	
+	ZnClient new
+		url: 'https://raw.githubusercontent.com/PharoAI/DatasetsFiles/master/datasets/', fileName;
+		downloadTo: self dataDirectory / fileName.
 ]
 
 { #category : #loading }
-DataSet class >> loadBoston [
+Datasets class >> loadBoston [
 	"Loads Boston house prices dataset. Sources:
 	(a) Origin: This dataset was taken from the StatLib library which
 	    is maintained at Carnegie Mellon University.
@@ -149,15 +90,13 @@ DataSet class >> loadBoston [
 		11. PTRATIO: pupil-teacher ratio by town
 		12. B: 1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town
 		13. LSTAT: % lower status of the population
-		14. MEDV: Median value of owner-occupied homes in $1000's
-	"
-	
-	self downloadBoston.
-	^ DataFrame readFromCsv: DataSetBridge root / 'data' / 'boston.csv'.
+		14. MEDV: Median value of owner-occupied homes in $1000's"
+		
+	^ self loadDatasetNamed: 'boston'.
 ]
 
 { #category : #loading }
-DataSet class >> loadBreastCancer [
+Datasets class >> loadBreastCancer [
 	"Loads breast cancer wisconsin (diagnostic) dataset.
 	Number of Instances: 569
 	Number of Attributes: 30
@@ -178,15 +117,26 @@ DataSet class >> loadBreastCancer [
 	Class Distribution: 212 - Malignant, 357 - Benign
 	Creator:	Dr. William H. Wolberg, W. Nick Street, Olvi L. Mangasarian
 	Donor:	 Nick Street
-	Date:	November, 1995
-	"
+	Date:	November, 1995"
 
-	self downloadBreastCancer.
-	^ DataFrame readFromCsv: DataSetBridge root / 'data' / 'breast_cancer.csv'.
+	^ self loadDatasetNamed: 'breast_cancer'.
 ]
 
 { #category : #loading }
-DataSet class >> loadDiabetes [
+Datasets class >> loadDatasetNamed: aDatasetName [
+	"Loads dataset with a given name into a data frame. If dataset is not found in a data directory, it is downloaded first"
+	
+	| file |
+	file := self dataDirectory / (aDatasetName, '.csv').
+	
+	file exists ifFalse: [ 
+		self downloadDatasetNamed: aDatasetName ].
+	
+	^ DataFrame readFromCsv: file.
+]
+
+{ #category : #loading }
+Datasets class >> loadDiabetes [
 	"Loads diabetes dataset.
 	Number of Instances: 442
 	Number of Attributes: First 10 columns are numeric predictive values
@@ -202,52 +152,45 @@ DataSet class >> loadDiabetes [
     S4
     S5
     S6
-	 y
-	"
+	 y"
 	
-	self downloadDiabetes.
-	^ DataFrame readFromCsv: DataSetBridge root / 'data' / 'diabetes.csv'.
+	^ self loadDatasetNamed: 'diabetes'.
 ]
 
 { #category : #loading }
-DataSet class >> loadDigits [
+Datasets class >> loadDigits [
 	"Loads optical recognition of handwritten digits dataset.
 	This dataset is different that MNIST dataset.
 	Number of Instances: 1797 (Source says 5620)
 	Number of Attributes: 64
 	Attribute Information: 8x8 image of integer pixels in the range 0..16.
-	Creator: Alpaydin (alpaydin ‘@’ boun.edu.tr)
-	"
+	Creator: Alpaydin (alpaydin ‘@’ boun.edu.tr)"
 	
-	self downloadDigits.
-	^ DataFrame readFromCsv: DataSetBridge root / 'data' / 'digits.csv'.
+	^ self loadDatasetNamed: 'digits'.
 ]
 
 { #category : #loading }
-DataSet class >> loadIris [
+Datasets class >> loadIris [
 	"Loads Iris plants dataset.
 	Number of Instances: 150 (50 in each of three classes)
-	Number of Attributes: 4 numeric, predictive attributes and the class
-	"
+	Number of Attributes: 4 numeric, predictive attributes and the class"
 	
-	self downloadIris.
-	^ DataFrame readFromCsv: DataSetBridge root / 'data' / 'iris.csv'.
+	^ self loadDatasetNamed: 'iris'.
 ]
 
 { #category : #loading }
-DataSet class >> loadMnistTest [
+Datasets class >> loadMnistTest [
 	"Loads MNIST testing data. Can take longer to load.
 	The MNIST database of handwritten digits, available from http://yann.lecun.com/exdb/mnist/.
 	The testing set has 10,000 examples. It is a subset of a larger set available from NIST.
 	The digits have been size-normalized and centered in a fixed-size image. 
 	"
 	
-	self downloadMnistTest.
-	^ DataFrame readFromCsv: DataSetBridge root / 'data' / 'mnist_test.csv'.
+	^ self loadDatasetNamed: 'mnist_test'.
 ]
 
 { #category : #loading }
-DataSet class >> loadWine [
+Datasets class >> loadWine [
 	"Loads Wine recognition dataset.
 	Number of Instances: 178 (50 in each of three classes)
 	Number of Attributes: 13 numeric, predictive attributes and the class
@@ -265,9 +208,7 @@ DataSet class >> loadWine [
     Hue
     OD280/OD315 of diluted wines
     Proline
-    class
-	"
+    class"
 	
-	self downloadWine.
-	^ DataFrame readFromCsv: DataSetBridge root / 'data' / 'wine.csv'.
+	^ self loadDatasetNamed: 'wine'.
 ]
