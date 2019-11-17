@@ -2,49 +2,49 @@
 A DataSetTest is a test class for testing the behavior of DataSet
 "
 Class {
-	#name : #DataSetTest,
+	#name : #DatasetsTest,
 	#superclass : #TestCase,
-	#category : #'DataSet-Tests'
+	#category : #'Datasets-Tests'
 }
 
 { #category : #tests }
-DataSetTest >> testLoadBoston [
+DatasetsTest >> testLoadBoston [
 	| df |
-	df := DataSet loadBoston.
+	df := Datasets loadBoston.
 	self assert: df size equals: 506.
 ]
 
 { #category : #tests }
-DataSetTest >> testLoadBreastCancer [
+DatasetsTest >> testLoadBreastCancer [
 	| df |
-	df := DataSet loadBreastCancer.
+	df := Datasets loadBreastCancer.
 	self assert: df size equals: 569.
 ]
 
 { #category : #tests }
-DataSetTest >> testLoadDiabetes [
+DatasetsTest >> testLoadDiabetes [
 	| df |
-	df := DataSet loadDiabetes.
+	df := Datasets loadDiabetes.
 	self assert: df size equals: 442.
 ]
 
 { #category : #tests }
-DataSetTest >> testLoadDigits [
+DatasetsTest >> testLoadDigits [
 	| df |
-	df := DataSet loadDigits.
+	df := Datasets loadDigits.
 	self assert: df size equals: 1797.
 ]
 
 { #category : #tests }
-DataSetTest >> testLoadIris [
+DatasetsTest >> testLoadIris [
 	| df |
-	df := DataSet loadIris.
+	df := Datasets loadIris.
 	self assert: df size equals: 150.
 ]
 
 { #category : #tests }
-DataSetTest >> testLoadWine [
+DatasetsTest >> testLoadWine [
 	| df |
-	df := DataSet loadWine.
+	df := Datasets loadWine.
 	self assert: df size equals: 178.
 ]

@@ -1,7 +1,7 @@
 SmalltalkCISpec {
   #loading : [
     SCIMetacelloLoadSpec {
-      #baseline : 'DataSet',
+      #baseline : 'Datasets',
       #platforms : [ #pharo ]
     }
   ],
@@ -10,7 +10,7 @@ SmalltalkCISpec {
   },
   #testing : {
     #coverage : {
-      #packages : [ 'DataSet*' ]
+      #packages : [ 'Datasets*' ]
     }
   }
 }
