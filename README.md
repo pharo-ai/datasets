@@ -5,19 +5,29 @@ Datasets library is used to load datasets in Pharo. The datasets are loaded as [
 
 
 ## Installation
+
 To install `Datasets`, go to the Playground (`Ctrl+OW`) in your [Pharo](https://pharo.org/) image and execute the following Metacello script (select it and press Do-it button or `Ctrl+D`):
 
 ```smalltalk
 Metacello new
   baseline: 'Datasets';
-  repository: 'github://PharoAI/Datasets';
+  repository: 'github://pharo-ai/Datasets';
   load.
+```
+
+## If you want to depend on it
+
+```smalltalk
+spec 
+   baseline: 'Datasets' 
+   with: [ spec repository: 'github://pharo-ai/Datasets' ].
 ```
 
 ## Usage
 
 To load a dataset, using `Datasets loadXYZ`. For example:
-```
+
+```smalltalk
 Datasets loadBoston.
 Datasets loadBreastCancer.
 Datasets loadWine.
