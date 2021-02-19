@@ -8,13 +8,13 @@ Installs:
 
 "
 Class {
-	#name : #BaselineOfDatasets,
+	#name : #BaselineOfAIDatasets,
 	#superclass : #BaselineOf,
-	#category : #BaselineOfDatasets
+	#category : #BaselineOfAIDatasets
 }
 
 { #category : #baselines }
-BaselineOfDatasets >> baseline: spec [
+BaselineOfAIDatasets >> baseline: spec [
 	<baseline>
 	spec for: #common do: [ 
 		"External dependencies"
@@ -23,6 +23,6 @@ BaselineOfDatasets >> baseline: spec [
     		with: [ spec repository: 'github://PolyMathOrg/DataFrame/src' ].
 		"Packages"
 		spec 
-			package: 'Datasets';
-			package: 'Datasets-Tests' with: [ spec requires: #('Datasets') ] ].
+			package: 'AI-Datasets';
+			package: 'AI-Datasets-Tests' with: [ spec requires: #('AI-Datasets') ] ].
 ]
