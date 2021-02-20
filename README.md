@@ -1,8 +1,7 @@
 # Pharo Datasets
-[![.github/workflows/cimatrix.yml](https://github.com/pharo-ai/Datasets/workflows/CI/badge.svg)](https://github.com/pharo-ai/Datasets/actions)
+[![CIMatrix](https://github.com/pharo-ai/Datasets/actions/workflows/cimatrix.yml/badge.svg)](https://github.com/pharo-ai/Datasets/actions/workflows/cimatrix.yml)
 
 Datasets library is used to load datasets in Pharo. The datasets are loaded as [DataFrame](https://github.com/PolyMathOrg/DataFrame/) objects.
-
 
 ## Installation
 
