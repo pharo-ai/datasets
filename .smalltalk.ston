@@ -2,15 +2,10 @@ SmalltalkCISpec {
   #loading : [
     SCIMetacelloLoadSpec {
       #baseline : 'AIDatasets',
-      #platforms : [ #pharo ]
+      #directory : '',
+      #onConflict : #useIncoming,
+      #onUpgrade : #useIncoming,
+      #ignoreImage : true
     }
-  ],
-  #preTesting : SCICustomScript {
-    #path : 'resources/ci/addRepoToIceberg.st'
-  },
-  #testing : {
-    #coverage : {
-      #packages : [ 'AI-Datasets*' ]
-    }
-  }
+  ]
 }
