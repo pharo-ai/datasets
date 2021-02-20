@@ -21,7 +21,7 @@ Class {
 	#category : #'AI-Datasets'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #utilities }
 AIDatasets class >> dataDirectory [
 	"Directory in which all dataset files will be stored"
 	^ 'data' asFileReference ensureCreateDirectory
