@@ -1,5 +1,5 @@
 # Pharo Datasets
-[![Build Status](https://travis-ci.org/PharoAI/Datasets.svg?branch=master)](https://travis-ci.org/PharoAI/Datasets)
+[![.github/workflows/cimatrix.yml](https://github.com/pharo-ai/Datasets/workflows/CI/badge.svg)](https://github.com/pharo-ai/Datasets/actions)
 
 Datasets library is used to load datasets in Pharo. The datasets are loaded as [DataFrame](https://github.com/PolyMathOrg/DataFrame/) objects.
 
@@ -10,8 +10,8 @@ To install `Datasets`, go to the Playground (`Ctrl+OW`) in your [Pharo](https://
 
 ```smalltalk
 Metacello new
-  baseline: 'Datasets';
-  repository: 'github://pharo-ai/Datasets';
+  baseline: 'AIDatasets';
+  repository: 'github://pharo-ai/datasets';
   load.
 ```
 
@@ -19,22 +19,22 @@ Metacello new
 
 ```smalltalk
 spec 
-   baseline: 'Datasets' 
-   with: [ spec repository: 'github://pharo-ai/Datasets' ].
+   baseline: 'AIDatasets' 
+   with: [ spec repository: 'github://pharo-ai/datasets' ].
 ```
 
 ## Usage
 
-To load a dataset, using `Datasets loadXYZ`. For example:
+To load a dataset, using `AIDatasets loadXYZ`. For example:
 
 ```smalltalk
-Datasets loadBoston.
-Datasets loadBreastCancer.
-Datasets loadWine.
-Datasets loadDiabetes.
-Datasets loadDigits.
-Datasets loadMnistTest.
-Datasets loadIris.
+AIDatasets loadBoston.
+AIDatasets loadBreastCancer.
+AIDatasets loadWine.
+AIDatasets loadDiabetes.
+AIDatasets loadDigits.
+AIDatasets loadMnistTest.
+AIDatasets loadIris.
 ```
 
 Loading a new dataset involves downloading the CSV file into the data/ directory in the local folder of your image. Then the data is read from the file and returned to you as a DataFrame object.
