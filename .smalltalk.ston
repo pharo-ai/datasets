@@ -2,14 +2,14 @@ SmalltalkCISpec {
   #loading : [
     SCIMetacelloLoadSpec {
       #baseline : 'AIDatasets',
-      #directory : '',
+      #platforms : [  #pharo ],
       #onConflict : #useIncoming,
-      #onUpgrade : #useIncoming,
-      #ignoreImage : true
+      #onUpgrade : #useIncoming
     }
   ],
   #testing : {
     #coverage : {
        #packages : [ 'AIDatasets*' ]
     }
+  }
 }
