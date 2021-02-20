@@ -10,7 +10,7 @@ SmalltalkCISpec {
   #testing : {
     #coverage : {
        #packages : [ 'AI-Datasets-*' ],
-        #format: #lcov
+       #format: #coveralls
     }
   }
 }
