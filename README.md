@@ -34,6 +34,7 @@ AIDatasets loadDiabetes.
 AIDatasets loadDigits.
 AIDatasets loadMnistTest.
 AIDatasets loadIris.
+AIDatasets loadOldFaithful.
 ```
 
 Loading a new dataset involves downloading the CSV file into the data/ directory in the local folder of your image. Then the data is read from the file and returned to you as a DataFrame object.
