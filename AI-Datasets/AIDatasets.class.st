@@ -165,8 +165,8 @@ AIDatasets class >> loadMnistTest [
 { #category : #loading }
 AIDatasets class >> loadOldFaithful [
 	"Loads the dataset with eruption and waiting time of Old Faithful Geyser.
-	Number of Instances: 150 (50 in each of three classes)
-	Number of Attributes: 4 numeric, predictive attributes and the class"
+	Number of Instances: 272
+	Number of Attributes: 2"
 	
 	^ self loadDatasetNamed: 'faithful'.
 ]
