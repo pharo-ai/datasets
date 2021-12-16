@@ -1,7 +1,7 @@
 SmalltalkCISpec {
   #loading : [
     SCIMetacelloLoadSpec {
-      #baseline : 'AIDatasets',
+      #baseline : 'AIDataSets',
       #platforms : [ #pharo ],
       #onConflict : #useIncoming,
       #onUpgrade : #useIncoming
@@ -9,7 +9,7 @@ SmalltalkCISpec {
   ],
   #testing : {
     #coverage : {
-       #packages : [ 'AI-Datasets.*' ],
+       #packages : [ 'AI-DataSets.*' ],
        #format: #lcov
     }
   }
