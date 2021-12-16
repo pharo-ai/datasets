@@ -2,56 +2,56 @@
 A DataSetTest is a test class for testing the behavior of DataSet
 "
 Class {
-	#name : #AIDatasetsTest,
+	#name : #AIDataSetsTest,
 	#superclass : #TestCase,
 	#category : #'AI-Datasets-Tests'
 }
 
 { #category : #tests }
-AIDatasetsTest >> testLoadBoston [
+AIDataSetsTest >> testLoadBoston [
 	| df |
-	df := AIDatasets loadBoston.
+	df := AIDataSets loadBoston.
 	self assert: df size equals: 506.
 ]
 
 { #category : #tests }
-AIDatasetsTest >> testLoadBreastCancer [
+AIDataSetsTest >> testLoadBreastCancer [
 	| df |
-	df := AIDatasets loadBreastCancer.
+	df := AIDataSets loadBreastCancer.
 	self assert: df size equals: 569.
 ]
 
 { #category : #tests }
-AIDatasetsTest >> testLoadDiabetes [
+AIDataSetsTest >> testLoadDiabetes [
 	| df |
-	df := AIDatasets loadDiabetes.
+	df := AIDataSets loadDiabetes.
 	self assert: df size equals: 442.
 ]
 
 { #category : #tests }
-AIDatasetsTest >> testLoadDigits [
+AIDataSetsTest >> testLoadDigits [
 	| df |
-	df := AIDatasets loadDigits.
+	df := AIDataSets loadDigits.
 	self assert: df size equals: 1797.
 ]
 
 { #category : #tests }
-AIDatasetsTest >> testLoadIris [
+AIDataSetsTest >> testLoadIris [
 	| df |
-	df := AIDatasets loadIris.
+	df := AIDataSets loadIris.
 	self assert: df size equals: 150.
 ]
 
 { #category : #tests }
-AIDatasetsTest >> testLoadOldFaithful [
+AIDataSetsTest >> testLoadOldFaithful [
 	| df |
-	df := AIDatasets loadOldFaithful.
+	df := AIDataSets loadOldFaithful.
 	self assert: df size equals: 272.
 ]
 
 { #category : #tests }
-AIDatasetsTest >> testLoadWine [
+AIDataSetsTest >> testLoadWine [
 	| df |
-	df := AIDatasets loadWine.
+	df := AIDataSets loadWine.
 	self assert: df size equals: 178.
 ]
