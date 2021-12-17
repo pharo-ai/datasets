@@ -29,6 +29,14 @@ AIDatasetsTest >> testLoadDiabetes [
 ]
 
 { #category : #tests }
+AIDatasetsTest >> testLoadDiabetesPima [
+
+	| df |
+	df := AIDatasets loadDiabetesPima.
+	self assert: df size equals: 768.
+]
+
+{ #category : #tests }
 AIDatasetsTest >> testLoadDigits [
 	| df |
 	df := AIDatasets loadDigits.

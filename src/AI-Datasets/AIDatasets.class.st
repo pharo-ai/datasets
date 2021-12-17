@@ -39,7 +39,7 @@ AIDatasets class >> downloadDatasetNamed: aDatasetName [
 		downloadTo: self dataDirectory / fileName.
 ]
 
-{ #category : #loading }
+{ #category : #'api - loading' }
 AIDatasets class >> loadBoston [
 	"Loads Boston house prices dataset. Sources:
 	(a) Origin: This dataset was taken from the StatLib library which
@@ -68,7 +68,7 @@ AIDatasets class >> loadBoston [
 	^ self loadDatasetNamed: 'boston'.
 ]
 
-{ #category : #loading }
+{ #category : #'api - loading' }
 AIDatasets class >> loadBreastCancer [
 	"Loads breast cancer wisconsin (diagnostic) dataset.
 	Number of Instances: 569
@@ -95,7 +95,7 @@ AIDatasets class >> loadBreastCancer [
 	^ self loadDatasetNamed: 'breast_cancer'.
 ]
 
-{ #category : #loading }
+{ #category : #private }
 AIDatasets class >> loadDatasetNamed: aDatasetName [
 	"Loads dataset with a given name into a data frame. If dataset is not found in a data directory, it is downloaded first"
 	
@@ -108,7 +108,7 @@ AIDatasets class >> loadDatasetNamed: aDatasetName [
 	^ DataFrame readFromCsv: file.
 ]
 
-{ #category : #loading }
+{ #category : #'api - loading' }
 AIDatasets class >> loadDiabetes [
 	"Loads diabetes dataset.
 	Number of Instances: 442
@@ -130,7 +130,30 @@ AIDatasets class >> loadDiabetes [
 	^ self loadDatasetNamed: 'diabetes'.
 ]
 
-{ #category : #loading }
+{ #category : #'api - loading' }
+AIDatasets class >> loadDiabetesPima [
+	"This dataset is originally from the National Institute of Diabetes and Digestive and Kidney 	Diseases. The objective of the dataset is to diagnostically predict whether or not a patient has 	diabetes, based on certain diagnostic measurements included in the dataset. Several constraints 	were placed on the selection of these instances from a larger database. In particular, all patients 	here are females at least 21 years old of Pima Indian heritage.
+	
+	https://www.kaggle.com/uciml/pima-indians-diabetes-database
+	
+	Number of Instances: 768
+	Number of Attributes: First 8 columns are numeric predictive values
+	Target: Column 9 is a binary outcome that indicates if the patient has cancer or not.
+	Attribute Information:
+    -Pregnancies
+    -Glucose
+    -BloodPressure
+    -SkinThickness
+    -Insulin
+    -BMI
+    -DiabetesPedigreeFunction
+    -Age
+    -Outcome"
+	
+	^ self loadDatasetNamed: 'diabetes_pima'.
+]
+
+{ #category : #'api - loading' }
 AIDatasets class >> loadDigits [
 	"Loads optical recognition of handwritten digits dataset.
 	This dataset is different that MNIST dataset.
@@ -142,7 +165,7 @@ AIDatasets class >> loadDigits [
 	^ self loadDatasetNamed: 'digits'.
 ]
 
-{ #category : #loading }
+{ #category : #'api - loading' }
 AIDatasets class >> loadIris [
 	"Loads Iris plants dataset.
 	Number of Instances: 150 (50 in each of three classes)
@@ -151,7 +174,7 @@ AIDatasets class >> loadIris [
 	^ self loadDatasetNamed: 'iris'.
 ]
 
-{ #category : #loading }
+{ #category : #'api - loading' }
 AIDatasets class >> loadMnistTest [
 	"Loads MNIST testing data. Can take longer to load.
 	The MNIST database of handwritten digits, available from http://yann.lecun.com/exdb/mnist/.
@@ -162,7 +185,7 @@ AIDatasets class >> loadMnistTest [
 	^ self loadDatasetNamed: 'mnist_test'.
 ]
 
-{ #category : #loading }
+{ #category : #'api - loading' }
 AIDatasets class >> loadOldFaithful [
 	"Loads the dataset with eruption and waiting time of Old Faithful Geyser.
 	Number of Instances: 272
@@ -171,7 +194,7 @@ AIDatasets class >> loadOldFaithful [
 	^ self loadDatasetNamed: 'faithful'.
 ]
 
-{ #category : #loading }
+{ #category : #'api - loading' }
 AIDatasets class >> loadWine [
 	"Loads Wine recognition dataset.
 	Number of Instances: 178 (50 in each of three classes)
