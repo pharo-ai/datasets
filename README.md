@@ -13,7 +13,7 @@ To install `Datasets`, go to the Playground (`Ctrl+OW`) in your [Pharo](https://
 
 ```smalltalk
 Metacello new
-  baseline: 'AIDataSets';
+  baseline: 'AIDatasets';
   repository: 'github://pharo-ai/datasets';
   load.
 ```
@@ -22,7 +22,7 @@ Metacello new
 
 ```smalltalk
 spec 
-   baseline: 'AIDataSets' 
+   baseline: 'AIDatasets' 
    with: [ spec repository: 'github://pharo-ai/datasets' ].
 ```
 
@@ -31,14 +31,14 @@ spec
 To load a dataset, using `AIDataSets loadXYZ`. For example:
 
 ```smalltalk
-AIDataSets loadBoston.
-AIDataSets loadBreastCancer.
-AIDataSets loadWine.
-AIDataSets loadDiabetes.
-AIDataSets loadDigits.
-AIDataSets loadMnistTest.
-AIDataSets loadIris.
-AIDataSets loadOldFaithful.
+AIDatasets loadBoston.
+AIDatasets loadBreastCancer.
+AIDatasets loadWine.
+AIDatasets loadDiabetes.
+AIDatasets loadDigits.
+AIDatasets loadMnistTest.
+AIDatasets loadIris.
+AIDatasets loadOldFaithful.
 ```
 
 Loading a new dataset involves downloading the CSV file into the data/ directory in the local folder of your image. Then the data is read from the file and returned to you as a DataFrame object.
