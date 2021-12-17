@@ -16,19 +16,19 @@ Example:
 	df := DataSet loadBoston.
 "
 Class {
-	#name : #AIDataSets,
+	#name : #AIDatasets,
 	#superclass : #Object,
-	#category : #'AI-DataSets'
+	#category : #'AI-Datasets'
 }
 
 { #category : #utilities }
-AIDataSets class >> dataDirectory [
+AIDatasets class >> dataDirectory [
 	"Directory in which all dataset files will be stored"
 	^ 'data' asFileReference ensureCreateDirectory
 ]
 
 { #category : #utilities }
-AIDataSets class >> downloadDatasetNamed: aDatasetName [
+AIDatasets class >> downloadDatasetNamed: aDatasetName [
 	"Downloads dataset with a given name"
 	
 	| fileName |
@@ -40,7 +40,7 @@ AIDataSets class >> downloadDatasetNamed: aDatasetName [
 ]
 
 { #category : #loading }
-AIDataSets class >> loadBoston [
+AIDatasets class >> loadBoston [
 	"Loads Boston house prices dataset. Sources:
 	(a) Origin: This dataset was taken from the StatLib library which
 	    is maintained at Carnegie Mellon University.
@@ -69,7 +69,7 @@ AIDataSets class >> loadBoston [
 ]
 
 { #category : #loading }
-AIDataSets class >> loadBreastCancer [
+AIDatasets class >> loadBreastCancer [
 	"Loads breast cancer wisconsin (diagnostic) dataset.
 	Number of Instances: 569
 	Number of Attributes: 30
@@ -96,7 +96,7 @@ AIDataSets class >> loadBreastCancer [
 ]
 
 { #category : #loading }
-AIDataSets class >> loadDatasetNamed: aDatasetName [
+AIDatasets class >> loadDatasetNamed: aDatasetName [
 	"Loads dataset with a given name into a data frame. If dataset is not found in a data directory, it is downloaded first"
 	
 	| file |
@@ -109,7 +109,7 @@ AIDataSets class >> loadDatasetNamed: aDatasetName [
 ]
 
 { #category : #loading }
-AIDataSets class >> loadDiabetes [
+AIDatasets class >> loadDiabetes [
 	"Loads diabetes dataset.
 	Number of Instances: 442
 	Number of Attributes: First 10 columns are numeric predictive values
@@ -131,7 +131,7 @@ AIDataSets class >> loadDiabetes [
 ]
 
 { #category : #loading }
-AIDataSets class >> loadDigits [
+AIDatasets class >> loadDigits [
 	"Loads optical recognition of handwritten digits dataset.
 	This dataset is different that MNIST dataset.
 	Number of Instances: 1797 (Source says 5620)
@@ -143,7 +143,7 @@ AIDataSets class >> loadDigits [
 ]
 
 { #category : #loading }
-AIDataSets class >> loadIris [
+AIDatasets class >> loadIris [
 	"Loads Iris plants dataset.
 	Number of Instances: 150 (50 in each of three classes)
 	Number of Attributes: 4 numeric, predictive attributes and the class"
@@ -152,7 +152,7 @@ AIDataSets class >> loadIris [
 ]
 
 { #category : #loading }
-AIDataSets class >> loadMnistTest [
+AIDatasets class >> loadMnistTest [
 	"Loads MNIST testing data. Can take longer to load.
 	The MNIST database of handwritten digits, available from http://yann.lecun.com/exdb/mnist/.
 	The testing set has 10,000 examples. It is a subset of a larger set available from NIST.
@@ -163,7 +163,7 @@ AIDataSets class >> loadMnistTest [
 ]
 
 { #category : #loading }
-AIDataSets class >> loadOldFaithful [
+AIDatasets class >> loadOldFaithful [
 	"Loads the dataset with eruption and waiting time of Old Faithful Geyser.
 	Number of Instances: 272
 	Number of Attributes: 2"
@@ -172,7 +172,7 @@ AIDataSets class >> loadOldFaithful [
 ]
 
 { #category : #loading }
-AIDataSets class >> loadWine [
+AIDatasets class >> loadWine [
 	"Loads Wine recognition dataset.
 	Number of Instances: 178 (50 in each of three classes)
 	Number of Attributes: 13 numeric, predictive attributes and the class

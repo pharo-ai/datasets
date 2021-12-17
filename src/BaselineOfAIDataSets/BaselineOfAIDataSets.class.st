@@ -8,13 +8,13 @@ Installs:
 
 "
 Class {
-	#name : #BaselineOfAIDataSets,
+	#name : #BaselineOfAIDatasets,
 	#superclass : #BaselineOf,
-	#category : #BaselineOfAIDataSets
+	#category : #BaselineOfAIDatasets
 }
 
 { #category : #baselines }
-BaselineOfAIDataSets >> baseline: spec [
+BaselineOfAIDatasets >> baseline: spec [
 	<baseline>
 	spec for: #common do: [ 
 		"External dependencies"
@@ -24,6 +24,6 @@ BaselineOfAIDataSets >> baseline: spec [
 		
 		"Packages"
 		spec 
-			package: 'AI-DataSets';
-			package: 'AI-DataSets-Tests' with: [ spec requires: #('AI-DataSets') ] ].
+			package: 'AI-Datasets' with: [ spec requires: 'DataFrame' ];
+			package: 'AI-Datasets-Tests' with: [ spec requires: #('AI-Datasets') ] ].
 ]

@@ -1,1 +1,1 @@
-Package { #name : #'AI-DataSets' }
+Package { #name : #'AI-Datasets' }

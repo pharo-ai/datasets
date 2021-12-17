@@ -1,1 +1,1 @@
-Package { #name : #BaselineOfAIDataSets }
+Package { #name : #BaselineOfAIDatasets }
