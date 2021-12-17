@@ -2,6 +2,7 @@ SmalltalkCISpec {
   #loading : [
     SCIMetacelloLoadSpec {
       #baseline : 'AIDatasets',
+      #directory : 'src',
       #platforms : [ #pharo ],
       #onConflict : #useIncoming,
       #onUpgrade : #useIncoming
