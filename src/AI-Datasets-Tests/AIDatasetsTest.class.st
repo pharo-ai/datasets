@@ -8,9 +8,9 @@ Class {
 }
 
 { #category : #tests }
-AIDatasetsTest >> testLoadBoston [
+AIDatasetsTest >> testLoadBostonHousing [
 	| df |
-	df := AIDatasets loadBoston.
+	df := AIDatasets loadBostonHousing.
 	self assert: df size equals: 506.
 ]
 

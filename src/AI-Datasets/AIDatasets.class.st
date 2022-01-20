@@ -40,7 +40,7 @@ AIDatasets class >> downloadDatasetNamed: aDatasetName [
 ]
 
 { #category : #'api - loading' }
-AIDatasets class >> loadBoston [
+AIDatasets class >> loadBostonHousing [
 	"Loads Boston house prices dataset. Sources:
 	(a) Origin: This dataset was taken from the StatLib library which
 	    is maintained at Carnegie Mellon University.
