@@ -1,9 +1,8 @@
 # Pharo Datasets
-![Build status](https://github.com/pharo-ai/Datasets/workflows/CI/badge.svg)
+
+[![Build status](https://github.com/pharo-ai/Datasets/workflows/CI/badge.svg)](https://github.com/pharo-ai/Datasets/actions/workflows/test.yml)
 [![Coverage Status](https://coveralls.io/repos/github/PharoAI/Datasets/badge.svg?branch=master)](https://coveralls.io/github/PharoAI/Datasets?branch=master)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/PharoAI/Datasets/master/LICENSE)
-[![Pharo version](https://img.shields.io/badge/Pharo-10-%23aac9ff.svg)](https://pharo.org/download)
-[![Pharo version](https://img.shields.io/badge/Pharo-9.0-%23aac9ff.svg)](https://pharo.org/download)
 
 Datasets library is used to load datasets in Pharo. The datasets are loaded as [DataFrame](https://github.com/PolyMathOrg/DataFrame/) objects.
 
