@@ -95,6 +95,36 @@ AIDatasets class >> loadBreastCancer [
 	^ self loadDatasetNamed: 'breast_cancer'.
 ]
 
+{ #category : #'api - loading' }
+AIDatasets class >> loadCreditCard [
+
+	"This case requires to develop a customer segmentation to define marketing strategy. The
+sample Dataset summarizes the usage behavior of about 9000 active credit card holders during the last 6 months. The file is at a customer level with 18 behavioral variables.
+
+Following is the Data Dictionary for Credit Card dataset :-
+
+CUSTID : Identification of Credit Card holder (Categorical)
+BALANCE : Balance amount left in their account to make purchases (
+BALANCEFREQUENCY : How frequently the Balance is updated, score between 0 and 1 (1 = frequently updated, 0 = not frequently updated)
+PURCHASES : Amount of purchases made from account
+ONEOFFPURCHASES : Maximum purchase amount done in one-go
+INSTALLMENTSPURCHASES : Amount of purchase done in installment
+CASHADVANCE : Cash in advance given by the user
+PURCHASESFREQUENCY : How frequently the Purchases are being made, score between 0 and 1 (1 = frequently purchased, 0 = not frequently purchased)
+ONEOFFPURCHASESFREQUENCY : How frequently Purchases are happening in one-go (1 = frequently purchased, 0 = not frequently purchased)
+PURCHASESINSTALLMENTSFREQUENCY : How frequently purchases in installments are being done (1 = frequently done, 0 = not frequently done)
+CASHADVANCEFREQUENCY : How frequently the cash in advance being paid
+CASHADVANCETRX : Number of Transactions made with ""Cash in Advanced""
+PURCHASESTRX : Numbe of purchase transactions made
+CREDITLIMIT : Limit of Credit Card for user
+PAYMENTS : Amount of Payment done by user
+MINIMUM_PAYMENTS : Minimum amount of payments made by user
+PRCFULLPAYMENT : Percent of full payment paid by user
+TENURE : Tenure of credit card service for user"
+
+	^ self loadDatasetNamed: 'credit_card_general'
+]
+
 { #category : #private }
 AIDatasets class >> loadDatasetNamed: aDatasetName [
 	"Loads dataset with a given name into a data frame. If dataset is not found in a data directory, it is downloaded first"
@@ -187,11 +217,16 @@ AIDatasets class >> loadMnistTest [
 
 { #category : #'api - loading' }
 AIDatasets class >> loadOldFaithful [
+
 	"Loads the dataset with eruption and waiting time of Old Faithful Geyser.
 	Number of Instances: 272
-	Number of Attributes: 2"
+	Number of Attributes: 2
 	
-	^ self loadDatasetNamed: 'faithful'.
+	Each row represents an observed eruption of the Old Faithful Geyser in Yellowstone National Park. The eruptions column represents the duration of the eruption in minutes, and the waiting column represents the duration in minutes until the next eruption.
+
+Extracted from TSV file published in Bl.ocks.org: Density Contours. Also published as a built-in dataset with R. Primary source: Härdle, W. (1991) Smoothing Techniques with Implementation in S. New York: Springer."
+
+	^ self loadDatasetNamed: 'faithful'
 ]
 
 { #category : #'api - loading' }

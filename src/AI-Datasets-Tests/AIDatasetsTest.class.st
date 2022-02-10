@@ -22,6 +22,14 @@ AIDatasetsTest >> testLoadBreastCancer [
 ]
 
 { #category : #tests }
+AIDatasetsTest >> testLoadCreditCard [
+
+	| df |
+	df := AIDatasets loadCreditCard.
+	self assert: df size equals: 8950
+]
+
+{ #category : #tests }
 AIDatasetsTest >> testLoadDiabetes [
 	| df |
 	df := AIDatasets loadDiabetes.
