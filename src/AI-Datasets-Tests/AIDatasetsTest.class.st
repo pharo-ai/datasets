@@ -59,6 +59,14 @@ AIDatasetsTest >> testLoadIris [
 ]
 
 { #category : #tests }
+AIDatasetsTest >> testLoadLilleHousesLeboncoin [
+
+	| df |
+	df := AIDatasets loadLilleHousesLeboncoin.
+	self assert: df size equals: 50
+]
+
+{ #category : #tests }
 AIDatasetsTest >> testLoadOldFaithful [
 	| df |
 	df := AIDatasets loadOldFaithful.

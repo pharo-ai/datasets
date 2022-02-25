@@ -199,11 +199,21 @@ AIDatasets class >> loadDigits [
 
 { #category : #'api - loading' }
 AIDatasets class >> loadIris [
+
 	"Loads Iris plants dataset.
 	Number of Instances: 150 (50 in each of three classes)
 	Number of Attributes: 4 numeric, predictive attributes and the class"
-	
-	^ self loadDatasetNamed: 'iris'.
+
+	^ self loadDatasetNamed: 'iris'
+]
+
+{ #category : #'api - loading' }
+AIDatasets class >> loadLilleHousesLeboncoin [
+
+	"Dataset that contains the number of rooms and the price of houses in Lille, France.
+	We took this take from one of the most-know website in France: Leboncoin."
+
+	^ self loadDatasetNamed: 'lille-houses-leboncoin'
 ]
 
 { #category : #'api - loading' }
