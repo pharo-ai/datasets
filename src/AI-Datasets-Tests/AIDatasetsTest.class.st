@@ -59,10 +59,10 @@ AIDatasetsTest >> testLoadIris [
 ]
 
 { #category : #tests }
-AIDatasetsTest >> testLoadLilleHousesLeboncoin [
+AIDatasetsTest >> testLoadLilleHousing [
 
 	| df |
-	df := AIDatasets loadLilleHousesLeboncoin.
+	df := AIDatasets loadLilleHousing.
 	self assert: df size equals: 50
 ]
 

@@ -208,12 +208,11 @@ AIDatasets class >> loadIris [
 ]
 
 { #category : #'api - loading' }
-AIDatasets class >> loadLilleHousesLeboncoin [
+AIDatasets class >> loadLilleHousing [
 
-	"Dataset that contains the number of rooms and the price of houses in Lille, France.
-	We took this take from one of the most-know website in France: Leboncoin."
+	"Small dataset (50 rows) that contains the number of rooms and the price of houses in Lille, France."
 
-	^ self loadDatasetNamed: 'lille-houses-leboncoin'
+	^ self loadDatasetNamed: 'lille-housing'
 ]
 
 { #category : #'api - loading' }
