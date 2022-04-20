@@ -19,8 +19,10 @@ BaselineOfAIDatasets >> baseline: spec [
 	spec for: #common do: [ 
 		"External dependencies"
 		spec
-			baseline: 'DataFrame'
-    		with: [ spec repository: 'github://PolyMathOrg/DataFrame/src' ].
+			baseline: 'AIExternalDependencies'
+			with: [ spec
+				loads: #('DataFrameGroup');
+				repository: 'github://pharo-ai/external-dependencies' ].
 		
 		"Packages"
 		spec 
