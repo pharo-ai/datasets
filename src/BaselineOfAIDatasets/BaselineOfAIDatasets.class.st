@@ -26,6 +26,6 @@ BaselineOfAIDatasets >> baseline: spec [
 		
 		"Packages"
 		spec 
-			package: 'AI-Datasets' with: [ spec requires: 'DataFrame' ];
+			package: 'AI-Datasets' with: [ spec requires: 'AIExternalDependencies' ];
 			package: 'AI-Datasets-Tests' with: [ spec requires: #('AI-Datasets') ] ].
 ]
