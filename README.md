@@ -30,7 +30,7 @@ spec
 To load a dataset, using `AIDataSets loadXYZ`. For example:
 
 ```smalltalk
-AIDatasets loadBoston.
+AIDatasets loadBostonHousing.
 AIDatasets loadBreastCancer.
 AIDatasets loadWine.
 AIDatasets loadDiabetes.
