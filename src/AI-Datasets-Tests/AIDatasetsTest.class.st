@@ -81,6 +81,13 @@ AIDatasetsTest >> testLoadRedWineQuality [
 ]
 
 { #category : #tests }
+AIDatasetsTest >> testLoadToothGrowth [
+	| df |
+	df := AIDatasets loadToothGrowth.
+	self assert: df size equals: 60.
+]
+
+{ #category : #tests }
 AIDatasetsTest >> testLoadWhiteWineQuality [
 	| df |
 	df := AIDatasets loadWhiteWineQuality.
